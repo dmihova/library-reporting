@@ -10,7 +10,10 @@
         <module name="api-adapter" />
         <module name="core" />
         <module name="domain" />
+        <module name="kafka" />
+        <module name="kafkaexport" />
         <module name="persistence" />
+        <module name="apiadapter" />
         <module name="api" />
         <module name="restexport" />
       </profile>
@@ -28,8 +31,11 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api" options="-parameters" />
       <module name="api-adapter" options="-parameters" />
+      <module name="apiadapter" options="-parameters" />
       <module name="core" options="-parameters" />
       <module name="domain" options="-parameters" />
+      <module name="kafka" options="-parameters" />
+      <module name="kafkaexport" options="-parameters" />
       <module name="persistence" options="-parameters" />
       <module name="rest" options="-parameters" />
       <module name="restexport" options="-parameters" />

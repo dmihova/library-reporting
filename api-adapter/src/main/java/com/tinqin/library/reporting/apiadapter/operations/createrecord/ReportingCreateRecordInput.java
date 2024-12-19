@@ -11,5 +11,7 @@ import lombok.ToString;
 @ToString
 @Getter
 public class ReportingCreateRecordInput implements ReportingProcessorInput {
+    private String objectId;
 
+    private String objectType;
 }

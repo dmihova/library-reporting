@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: reporting
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: reporting
+    ports:
+      - "5323:5432"
+    volumes:
+      - db:/var/lib/postgresql
+
+volumes:
+  db:
