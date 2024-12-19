@@ -29,10 +29,12 @@ public class CreateRecordProcessor implements CreateRecord {
     }
 
     private ReportingCreateRecordOutput saveRecord(ReportingCreateRecordInput input) {
-        Record record = Record
+         Record record = Record
                 .builder()
                 .isDeleted(false)
                 .isClosed(false)
+                .objectType(input.getObjectType())
+                .objectId(input.getObjectId())
                 .eventsList(List.of())
                 .build();
 

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+
 @Entity
 @Table(name = "records")
 @Getter
@@ -29,7 +30,14 @@ public class Record {
     @Column(name = "is_deleted")
     private Boolean isDeleted;
 
+    @Column(name = "object_id")
+    private String objectId;
+
+    @Column(name = "object_type")
+    private String objectType;
+
+
     @OneToMany(cascade = CascadeType.MERGE,fetch = FetchType.EAGER, mappedBy = "record")
-    @JsonManagedReference  ///  to avoid cycle
+    @JsonManagedReference
     private List<Event> eventsList = new ArrayList<>();
 }
