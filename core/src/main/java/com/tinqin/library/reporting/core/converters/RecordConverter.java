@@ -7,6 +7,7 @@ import com.tinqin.library.reporting.persistence.models.Record;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Component
@@ -17,6 +18,7 @@ public class RecordConverter implements Converter<Record, ReportingRecord> {
         List<ReportingEvent> reportingEvents = source
                 .getEventsList()
                 .stream()
+                .sorted(Comparator.comparing(Event::getCreatedAt))
                 .map(this::convertEvent)
                 .toList();
 

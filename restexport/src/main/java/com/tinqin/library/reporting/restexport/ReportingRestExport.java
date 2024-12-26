@@ -19,10 +19,10 @@ public interface ReportingRestExport {
             consumes = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<GetRecordOutput> getRecord(@PathVariable("recordId") String recordId);
 
-    @PostMapping(path = POST_RECORD, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = RECORD, produces = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<CreateRecordOutput> createRecord();
 
-    @PostMapping(path = POST_EVENT, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = EVENT, produces = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<CreateEventOutput> createEvent(CreateEventInput input);
 
 }
