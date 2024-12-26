@@ -7,6 +7,7 @@ import com.tinqin.library.reporting.apiadapter.operations.postevent.ReportingCre
 import com.tinqin.library.reporting.core.errorhandler.base.ErrorHandler;
 import com.tinqin.library.reporting.core.exceptions.NotFoundException;
 import com.tinqin.library.reporting.core.exceptions.RecordClosedException;
+import com.tinqin.library.reporting.core.exceptions.RecordDeletedException;
 import com.tinqin.library.reporting.persistence.models.Event;
 import com.tinqin.library.reporting.persistence.models.Record;
 import com.tinqin.library.reporting.persistence.repositories.EventRepository;
@@ -49,10 +50,10 @@ public class CreateEventProcessor implements CreateEvent {
                 .orElseThrow(() -> new NotFoundException("RECORD_NOT_FOUND"));
 
         if (record.getIsDeleted()) {
-            throw new NotFoundException("RECORD_IS_DELETED");
+            throw new RecordDeletedException("RECORD_IS_DELETED");
         }
         if (record.getIsClosed()) {
-            throw new RecordClosedException("IS_CLOSED");
+            throw new RecordClosedException("RECORD_IS_CLOSED");
         }
         return record;
     }
@@ -67,8 +68,8 @@ public class CreateEventProcessor implements CreateEvent {
                 .build();
 
         eventRepository.save(event);
-        record.getEventsList().add(event);
-        recordRepository.save(record);
+     //   record.getEventsList().add(event);
+       // recordRepository.save(record);
 
         return event;
     }
