@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
-import static com.tinqin.library.reporting.kafkaexport.TopicConfig.TOPIC_NAME;
+import static com.tinqin.library.reporting.kafkaexport.TopicConfig.*;
 
 @Service
 @RequiredArgsConstructor
@@ -14,8 +14,13 @@ public class KafkaProducerService {
 
   private final KafkaTemplate<String,String> kafkaTemplate;
 
-  public void createAuthorRecord(UUID authorId){
-
-    kafkaTemplate.send(TOPIC_NAME, authorId.toString());
+  public void createAuthorRecord(UUID id){
+    kafkaTemplate.send(TOPIC_NAME_AUTHOR, id.toString());
   }
+
+  public void createBookRecord(UUID id  ){
+    kafkaTemplate.send(TOPIC_NAME_BOOK, id.toString() );
+  }
+
+
 }

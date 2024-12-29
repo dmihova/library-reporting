@@ -11,7 +11,7 @@
     <groupId>com.tinqin.library.reporting</groupId>
     <artifactId>reporting</artifactId>
     <version>${revision}</version>
-    <packaging>pom</packaging>
+     <packaging>pom</packaging>
 
 
     <properties>
@@ -20,6 +20,7 @@
         <swagger.version>2.6.0</swagger.version>
         <mapstruct.version>1.6.3</mapstruct.version>
         <mapstruct.binding.version>0.2.0</mapstruct.binding.version>
+        <book.revision>0.0.1-SNAPSHOT</book.revision>
     </properties>
 
     <modules>

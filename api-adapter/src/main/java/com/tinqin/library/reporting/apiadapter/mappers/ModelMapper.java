@@ -12,7 +12,7 @@ import org.mapstruct.factory.Mappers;
 @Mapper(componentModel = "spring")
 public interface ModelMapper {
 
-    CreateRecordMapper INSTANCE = Mappers.getMapper(CreateRecordMapper.class);
+    ModelMapper INSTANCE = Mappers.getMapper(ModelMapper.class);
 
     ApiError toApiError(OperationError operationError);
 
