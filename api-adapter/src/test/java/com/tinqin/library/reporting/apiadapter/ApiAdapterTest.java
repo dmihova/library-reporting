@@ -148,7 +148,7 @@ class ApiAdapterTest {
         ReportingCreateRecordInput reportingInput = ReportingCreateRecordInput
                 .builder()
                 .build();
-
+/**/
         OperationError operationError = BeError
                 .builder()
                 .status(HttpStatus.BAD_REQUEST)
