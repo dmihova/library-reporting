@@ -8,8 +8,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication(scanBasePackages = "com.tinqin.library.reporting")
-@EntityScan(basePackages = "com.tinqin.library.reporting.persistence.models")
-@EnableJpaRepositories(basePackages = "com.tinqin.library.reporting.persistence.repositories")
 @EnableFeignClients (basePackages = "com.tinqin.library.reporting.domain")
 
 public class ReportingApplication {

@@ -1,4 +1,4 @@
-package com.tinqin.library.reporting.rest;
+package com.tinqin.library.reporting.rest.controllers;
 
 import com.tinqin.library.reporting.api.ApiRoutes;
 import com.tinqin.library.reporting.api.models.ApiError;
@@ -7,13 +7,12 @@ import com.tinqin.library.reporting.api.operations.postevent.CreateEventInput;
 import com.tinqin.library.reporting.api.operations.postevent.CreateEventOutput;
 import com.tinqin.library.reporting.apiadapter.ApiAdapter;
 import io.vavr.control.Either;
+
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -23,7 +22,7 @@ public class EventController extends BaseController {
 
 
     @PostMapping(ApiRoutes.EVENT)
-    public ResponseEntity<?> createEvent(CreateEventInput input) {
+    public ResponseEntity<?> createEvent(@Valid @RequestBody CreateEventInput input) {
         Either<ApiError, CreateEventOutput> event = apiAdapter.createEvent(input);
 
         return mapToResponseEntity(event, HttpStatus.CREATED);

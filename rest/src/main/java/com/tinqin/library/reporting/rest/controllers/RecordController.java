@@ -1,4 +1,4 @@
-package com.tinqin.library.reporting.rest;
+package com.tinqin.library.reporting.rest.controllers;
 
 import com.tinqin.library.reporting.api.ApiRoutes;
 import com.tinqin.library.reporting.api.models.ApiError;
@@ -34,7 +34,7 @@ public class RecordController extends BaseController {
     }
 
     @PostMapping(ApiRoutes.RECORD)
-    public ResponseEntity<?> createRecord(CreateRecordInput input) {
+    public ResponseEntity<?> createRecord(@RequestBody CreateRecordInput input) {
         Either<ApiError, CreateRecordOutput> result = apiAdapter.createRecord(input);
 
         return mapToResponseEntity(result, HttpStatus.CREATED);
