@@ -1,16 +1,10 @@
 package com.tinqin.library.reporting.core.processors;
 
 import com.tinqin.library.reporting.apiadapter.errors.OperationError;
-import com.tinqin.library.reporting.apiadapter.models.ReportingRecord;
 import com.tinqin.library.reporting.apiadapter.operations.closerecord.CloseRecord;
 import com.tinqin.library.reporting.apiadapter.operations.closerecord.ReportingCloseRecordInput;
 import com.tinqin.library.reporting.apiadapter.operations.closerecord.ReportingCloseRecordOutput;
-import com.tinqin.library.reporting.apiadapter.operations.createrecord.CreateRecord;
-import com.tinqin.library.reporting.apiadapter.operations.createrecord.ReportingCreateRecordInput;
-import com.tinqin.library.reporting.apiadapter.operations.createrecord.ReportingCreateRecordOutput;
-import com.tinqin.library.reporting.apiadapter.operations.getrecord.ReportingGetRecordOutput;
 import com.tinqin.library.reporting.core.errorhandler.base.ErrorHandler;
-import com.tinqin.library.reporting.core.exceptions.BusinessException;
 import com.tinqin.library.reporting.core.exceptions.NotFoundException;
 import com.tinqin.library.reporting.core.exceptions.RecordDeletedException;
 import com.tinqin.library.reporting.persistence.models.Record;

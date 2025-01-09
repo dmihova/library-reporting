@@ -1,4 +1,4 @@
-package com.tinqin.library.reporting.rest;
+package com.tinqin.library.reporting.rest.controllers;
 
 
 import com.tinqin.library.reporting.api.models.ApiError;

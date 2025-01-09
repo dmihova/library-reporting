@@ -1,11 +1,9 @@
-package com.tinqin.library.reporting.rest;
+package com.tinqin.library.reporting.rest.controllers;
 
-import com.tinqin.library.book.api.operations.book.getbooksidlist.GetBooksIdListInput;
 import com.tinqin.library.reporting.api.ApiRoutes;
 import com.tinqin.library.reporting.domain.clients.BookClient;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
