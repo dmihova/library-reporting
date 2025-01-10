@@ -29,7 +29,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 @WebMvcTest(EventController.class)
 class EventControllerTest {
     @Autowired
-    MockMvc mockMvc;
+    MockMvc mockMvc;// browser functions
 
     @MockBean
     ApiAdapter apiAdapter;

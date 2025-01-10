@@ -13,7 +13,6 @@ public class BookClientConfiguration {
 
     @Bean
     public Decoder feignDecoder() {
-
         return new ResponseEntityDecoder(new JacksonDecoder(objectMapper)
         );
     }
