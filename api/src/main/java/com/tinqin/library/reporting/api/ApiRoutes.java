@@ -10,6 +10,7 @@ public class ApiRoutes {
   public static final String  GET_EVENT = EVENT +"/{eventId}";
 
   public static final String BOOK = API + "/books";
+  public static final String BOOK_V2 = API + "/booksv2";
 
 
 }
