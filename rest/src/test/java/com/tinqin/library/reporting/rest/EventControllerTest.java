@@ -39,7 +39,7 @@ class EventControllerTest {
     public static Stream<Arguments> returnBadRequestWhenEventNameFromMethodInvalid() {
 
         return  Stream.of(
-                Arguments.of("te", false),
+                Arguments.of("t", false),
                 Arguments.of("t1234567890123456789012345678sssssssssssss", false) );
     }
 
@@ -66,7 +66,7 @@ class EventControllerTest {
 
 
     @ParameterizedTest
-    @ValueSource(strings = {"te","t1234567890123456789012345678sssssssssssss"})
+    @ValueSource(strings = {"t","t1234567890123456789012345678sssssssssssss"})
     @SneakyThrows
     void returnBadRequestWhenEventNameInvalid(String name) throws Exception {
         CreateEventInput createEventInput = CreateEventInput
