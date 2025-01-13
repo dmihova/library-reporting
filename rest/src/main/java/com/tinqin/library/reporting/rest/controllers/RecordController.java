@@ -35,6 +35,7 @@ public class RecordController extends BaseController {
 
     @PostMapping(ApiRoutes.RECORD)
     public ResponseEntity<?> createRecord(@RequestBody CreateRecordInput input) {
+
         Either<ApiError, CreateRecordOutput> result = apiAdapter.createRecord(input);
 
         return mapToResponseEntity(result, HttpStatus.CREATED);
