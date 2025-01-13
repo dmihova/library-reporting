@@ -18,6 +18,6 @@ public class CreateEventInput {
     private String recordId;
 
     @NotBlank
-    @Length(min = 3, max = 30)
+    @Length(min =1, max = 30,message = "Length must be between 3 and 30")
     private String eventName;
 }
